@@ -52,8 +52,9 @@ pipeline {
     }
     post {
         always {
-            emailext body: "Test stage finished: ${currentBuild.result}", subject: "Test Stage ${currentBuild.result}", to: "ashwinideore2704@gmail.com", attachmentsPattern: "*/.log"
+            emailext( body: "Test stage finished: ${currentBuild.result}", subject: "Test Stage ${currentBuild.result}", to: "ashwinideore2704@gmail.com", 
         attachLog: true
+                     )
         }
     }
 }
